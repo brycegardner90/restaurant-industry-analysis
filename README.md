@@ -1,33 +1,80 @@
-# U.S. Restaurant Industry Analysis — 2000 to 2024
+# 🍽️ Four Tiers, One Century: U.S. Restaurant Industry Analysis
+### Project 4 of 5 | Tools: Google Sheets · SQLite · Tableau Public
 
-A 25-year financial analysis of eight publicly traded restaurant companies across four 
-market tiers. Built as Project 4 of 5 in a data analytics portfolio progression.
-
----
-
-## Portfolio Context
-
-| Project | Topic | Tools |
-|---|---|---|
-| 1 | Atlanta City Analysis | SQL, Tableau |
-| 2 | Sports Analysis | SQL, Tableau |
-| 3 | Video Game Analysis | SQL, Tableau |
-| **4** | **U.S. Restaurant Industry 2000–2024** | **Google Sheets, SQLite, Tableau** |
-| 5 | Financial Analysis Capstone | TBD |
+A 25-year financial analysis of eight publicly traded restaurant companies across four
+market tiers — fast food, fast casual, casual dining, and upscale. Built with Google
+Sheets, SQLite, and Tableau Public to examine revenue, margins, same store sales, and
+location growth from 2000–2024 — revealing how each tier survived recession, disruption,
+and a global pandemic.
 
 ---
 
-## Project Overview
+## Tools Used
+| Tool | Purpose |
+|---|---|
+| Google Sheets | Data collection, cleaning, and relational table structuring |
+| SQLite | Database storage and querying |
+| DB Browser for SQLite | SQL query interface |
+| Tableau Public | Interactive dashboards and visualizations |
 
-The U.S. restaurant industry crossed $1 trillion in annual revenue for the first time 
-in 2024. This project examines how four distinct market tiers — fast food, fast casual, 
-casual dining, and upscale — navigated 25 years of economic turbulence including the 
-dot-com recession, the 2008 Great Recession, the rise of fast casual, and the 
-COVID-19 pandemic.
+---
 
-Eight publicly traded companies were selected to represent each tier with meaningful 
-public data windows across the century.
+## The Story
 
+### Dashboard 1 — The Big Picture
+The industry crossed $1 trillion in annual revenue for the first time in 2024 — but
+the path there was anything but smooth. Two recessions, a pandemic, a frozen minimum
+wage, and relentless food price inflation all left their mark. This dashboard sets the
+macro stage before zooming into individual companies. The dual-axis CPI vs minimum wage
+chart is the sleeper hit — food prices rose 65% since 2009 while the federal minimum
+wage hasn't moved a dollar.
+
+![The Big Picture](images/dashboard1_big_picture.png)
+
+---
+
+### Dashboard 2 — Four Tiers, One Century
+Eight companies, four tiers, 25 years. The revenue line chart shows McDonald's
+dominating from above, Chipotle climbing from nothing, Panera going dark after 2016,
+and Yum!'s cliff drop marking the China spinoff. The scatter plot is the centerpiece —
+positioning every company by average margin vs margin volatility reveals Texas Roadhouse
+as the quiet outlier: consistently profitable in a way nobody else in the dataset
+comes close to matching.
+
+![Four Tiers, One Century](images/dashboard2_four_tiers.png)
+
+---
+
+### Dashboard 3 — Survive and Thrive
+This is where COVID hits the data. The grouped bar chart isolates four key years —
+2008, 2009, 2020, 2021 — showing each tier's same store sales response to crisis and
+recovery. Casual dining dropped -19.3% in 2020 then bounced back +22% in 2021. Fast
+casual grew during the pandemic. The heat map below tells the full 25-year margin story
+by company — with Ruth's Chris 2020 appearing as a vivid red square against an otherwise
+blue field. The sharpest single data point in the project.
+
+![Survive and Thrive](images/dashboard3_survive_thrive.png)
+
+---
+
+## Project Structure
+```
+restaurant-industry-analysis/
+├── data/
+│   └── Restraunt_25_year_Analysis_CLEAN.xlsx
+├── sql/
+│   └── restaurant_analysis_queries.sql
+├── images/
+│   ├── dashboard1_big_picture.png
+│   ├── dashboard2_four_tiers.png
+│   └── dashboard3_survive_thrive.png
+├── Restaurant_Analysis.twbx
+└── README.md
+```
+
+---
+
+## Companies Analyzed
 | Company | Ticker | Tier | Public Data Window |
 |---|---|---|---|
 | McDonald's | MCD | Fast Food | 2000–2024 |
@@ -41,151 +88,67 @@ public data windows across the century.
 
 ---
 
-## Tools & Skills
-
-- **Google Sheets** — data collection, cleaning, and relational table structuring
-- **SQLite / DB Browser** — relational database design and analytical queries
-- **Tableau Public** — interactive dashboard visualization and narrative storytelling
-
----
-
 ## Data Sources
+| Metric | Source | Years Available |
+|---|---|---|
+| Company Financials | SEC 10-K / Macrotrends.net | 2000–2024 |
+| Food CPI (CUUR0000SEFV) | Bureau of Labor Statistics | 2000–2024 |
+| Restaurant Employment (CEU7072200001) | Bureau of Labor Statistics | 2000–2024 |
+| GDP Growth | Federal Reserve Economic Data (FRED) | 2000–2024 |
+| Industry Revenue | National Restaurant Association | 2000–2024 |
 
-- SEC 10-K annual filings
-- Macrotrends.net historical financials
-- Bureau of Labor Statistics — food CPI (CUUR0000SEFV) and employment (CEU7072200001)
-- Federal Reserve Economic Data (FRED) — annual GDP growth
-- National Restaurant Association annual reports
-- Claude AI synthesis for gap-filling and cross-source validation
-
----
-
-## Database Schema
-
-Three relational tables modeled after a star schema:
-
-- **companies** — dimension table, 8 rows, static company reference data
-- **annual_financials** — fact table, 200 rows, one record per company per year
-- **macro_context** — environment table, 25 rows, one record per year
-
-Key fields include total revenue, net income, net margin, operating income, 
-same store sales growth, total locations, stock price, market cap, food CPI, 
-restaurant employment, federal minimum wage, and GDP growth.
+> **Note on methodology:** Same store sales for Yum! reflects Taco Bell flagship only;
+> Brinker reflects Chili's only; Darden reflects Olive Garden only. Labor cost data
+> only available for operator-owned companies — franchise models do not carry food or
+> labor costs on their books directly. Panera data ends 2016 (went private). Ruth's
+> Chris data ends 2022 (acquired by Dine Brands). Yum! 2016 revenue drop reflects
+> China spinoff, not operational decline. Darden 2014 revenue drop reflects Red Lobster
+> divestiture.
 
 ---
 
-## Key Findings
-
-**1. Fast casual was COVID-proof.**
-Fast casual was the only tier to grow revenue during 2020 (+7.6%), driven by 
-Chipotle's digital ordering infrastructure. Every other tier declined.
-
-**2. Casual dining took the hardest COVID hit.**
-Casual dining same store sales dropped -19.3% in 2020 — nearly four times worse 
-than fast food at -5.6%. The recovery in 2021 (+22%) was equally dramatic.
-
-**3. Texas Roadhouse is the consistency story of the century.**
-Texas Roadhouse maintained the tightest net margin range of any company in the 
-dataset — just 5.39 percentage points across 21 years — and exceeded 8% margins 
-in 19 of those 21 years.
-
-**4. The minimum wage vs inflation gap tells a hidden story.**
-The federal minimum wage has been frozen at $7.25 since 2009 while food away 
-from home CPI rose 65% over the same period. This pressure is visible in operator 
-labor cost trends across the dataset.
-
-**5. Not every revenue drop is a collapse.**
-Yum! Brands revenue fell 51% in 2016 and Darden fell 21% in 2014 — both due to 
-strategic divestitures, not operational failure. Context matters in financial analysis.
-
----
-
-## Dashboards
-
-Full interactive analysis published on Tableau Public:
+## Interactive Dashboards
 👉 **[View on Tableau Public](https://public.tableau.com/app/profile/bryce.gardner/vizzes)**
 
 ---
 
-### Dashboard 1 — The Big Picture
-*Industry-wide context: revenue growth, inflation vs wages, and employment 2000–2024*
-
-![Dashboard 1 — The Big Picture](images/dashboard1_big_picture.png)
-
-Three macro-level charts share the same time axis, allowing direct visual comparison 
-of how the industry's revenue, price environment, and workforce responded to the same 
-economic events. The Great Recession and COVID-19 reference lines anchor the narrative.
-
----
-
-### Dashboard 2 — Four Tiers, One Century
-*Competitive financial analysis: revenue, margins, and consistency by company and tier*
-
-![Dashboard 2 — Four Tiers, One Century](images/dashboard2_four_tiers.png)
-
-The revenue line chart shows all eight companies across 25 years — McDonald's 
-dominating at the top, Chipotle's steep climb from nothing, Panera going dark after 
-2016, and Yum!'s cliff drop reflecting the China spinoff. The scatter plot positions 
-every company by average margin vs margin volatility, making Texas Roadhouse's 
-outlier consistency immediately visible.
-
----
-
-### Dashboard 3 — Survive and Thrive
-*Crisis response and recovery: same store sales during economic events and margin heat map*
-
-![Dashboard 3 — Survive and Thrive](images/dashboard3_survive_thrive.png)
-
-The grouped bar chart isolates four key years — 2008, 2009, 2020, 2021 — to show 
-how each tier responded to crisis and recovered. The heat map below shows net margin 
-by company by year across the full 25-year span, with Ruth's Chris 2020 appearing as 
-a vivid red against an otherwise blue field — the sharpest single data point in 
-the dataset.
-
----
-
-## SQL Queries
-
-Eight documented queries in [`restaurant_analysis_queries.sql`](restaurant_analysis_queries.sql):
-
+## SQL Queries Included
 | Query | Description |
 |---|---|
-| 1 | Sanity check — verify joins across all three tables |
-| 2 | Average net margin by tier across full dataset |
-| 3 | COVID impact by tier — 2019 vs 2020 revenue comparison |
-| 4 | Best performing company by average net margin with range |
-| 5 | Same store sales by tier during key economic events |
-| 6 | Location growth by decade per company |
-| 7 | Three-table macro context join — revenue vs inflation vs GDP |
-| 8 | Consistency scoring — margin range and years above 8% |
+| 01 | Sanity check — verify joins across all three tables |
+| 02 | Average net margin by tier across full dataset |
+| 03 | COVID impact by tier — 2019 vs 2020 revenue comparison |
+| 04 | Best performing company by average net margin with range |
+| 05 | Same store sales by tier during key economic events |
+| 06 | Location growth by decade per company |
+| 07 | Three-table macro context join — revenue vs inflation vs GDP |
+| 08 | Consistency scoring — margin range and years above 8% |
 
 ---
 
-## Methodology Notes
-
-- Same store sales for Yum! Brands reflects Taco Bell flagship only
-- Same store sales for Brinker reflects Chili's flagship only  
-- Same store sales for Darden reflects Olive Garden flagship only
-- Labor cost data only available for operator-owned companies — franchise models 
-  do not carry food or labor costs on their books directly, inflating their 
-  reported net margins relative to operators
-- Panera Bread data ends 2016 following JAB Holding private acquisition
-- Ruth's Chris data ends 2022 following Dine Brands acquisition
-- Yum! Brands 2016 revenue drop reflects Yum! China spinoff, not operational decline
-- Darden 2014 revenue drop reflects Red Lobster divestiture
+## Key Findings
+- Fast casual was the **only tier to grow revenue during COVID** (+7.6% in 2020), driven by Chipotle's digital ordering infrastructure
+- Casual dining same store sales dropped **-19.3% in 2020** — nearly four times worse than fast food at -5.6%
+- Texas Roadhouse maintained a net margin range of just **5.39 percentage points across 21 years**, exceeding 8% margins in 19 of those years
+- The federal minimum wage has been **frozen at $7.25 since 2009** while food away from home CPI rose 65% over the same period
+- McDonald's net margin improved from **13.9% in 2000 to 31.7% in 2024**, reflecting aggressive franchise model conversion
+- Ruth's Chris posted a **-5.91% net margin in 2020** — the only company in the dataset to go negative
 
 ---
 
-## Repository Contents
+## Author
+Bryce Gardner
+- GitHub: [brycegardner90](https://github.com/brycegardner90)
+- LinkedIn: [Bryce Gardner](https://www.linkedin.com/in/bryce-gardner-16a889183)
 
-```
-restaurant-industry-analysis/
-├── README.md
-├── restaurant_analysis_queries.sql
-├── Restraunt_25_year_Analysis_CLEAN.xlsx
-├── Restaurant_Analysis.twbx
-└── images/
-    ├── dashboard1_big_picture.png
-    ├── dashboard2_four_tiers.png
-    └── dashboard3_survive_thrive.png
-```
+---
+
+## Portfolio Navigation
+
+| Project | Topic | Tools |
+|---|---|---|
+| [Project 1 — Video Game Sales Analysis](https://github.com/brycegardner90/video-game-sales-analysis) | Global video game sales trends (1980–2020) | SQL · Power BI |
+| [Project 2 — NFL Penalty Bias Analysis](https://github.com/brycegardner90/nfl-penalty-bias-analysis) | Do certain NFL teams get more blown calls? | Python · SQL · Power BI |
+| [Project 3 — Atlanta Rising](https://github.com/brycegardner90/atlanta-rising) | Atlanta's century of economic & demographic growth | Python · SQLite · Power BI |
+| **Project 4 — Four Tiers, One Century** *(you are here)* | U.S. restaurant industry financial analysis 2000–2024 | Google Sheets · SQLite · Tableau |
+| Project 5 — Coming Soon | Financial Analysis Capstone | TBD |
