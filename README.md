@@ -148,7 +148,7 @@ Bryce Gardner
 | Project | Topic | Tools |
 |---|---|---|
 | [Project 1 — Video Game Sales Analysis](https://github.com/brycegardner90/video-game-sales-analysis) | Global video game sales trends (1980–2020) | SQL · Power BI |
-| [Project 2 — NFL Penalty Bias Analysis](https://github.com/brycegardner90/nfl-penalty-bias-analysis) | Do certain NFL teams get more blown calls? | Python · SQL · Power BI |
-| [Project 3 — Atlanta Rising](https://github.com/brycegardner90/atlanta-rising) | Atlanta's century of economic & demographic growth | Python · SQLite · Power BI |
+| [Project 2 — NFL Penalty Bias Analysis](https://github.com/brycegardner90/nfl-penalty-analysis) | Do certain NFL teams get more blown calls? | Python · SQL · Power BI |
+| [Project 3 — Atlanta Rising](https://github.com/brycegardner90/Atlanta-Rising-A-Century-of-Growth) | Atlanta's century of economic & demographic growth | Python · SQLite · Power BI |
 | **Project 4 — Four Tiers, One Century** *(you are here)* | U.S. restaurant industry financial analysis 2000–2024 | Google Sheets · SQLite · Tableau |
 | Project 5 — Coming Soon | Financial Analysis Capstone | TBD |
