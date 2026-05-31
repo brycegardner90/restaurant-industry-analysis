@@ -1,11 +1,7 @@
 # 🍽️ Four Tiers, One Century: U.S. Restaurant Industry Analysis
-### Project 4 of 5 | Tools: Google Sheets · SQLite · Tableau Public
+### Project 4 of 5 | Tools: Google Sheets · SQLite · Tableau
 
-A 25-year financial analysis of eight publicly traded restaurant companies across four
-market tiers — fast food, fast casual, casual dining, and upscale. Built with Google
-Sheets, SQLite, and Tableau Public to examine revenue, margins, same store sales, and
-location growth from 2000–2024 — revealing how each tier survived recession, disruption,
-and a global pandemic.
+A 25-year financial analysis of eight publicly traded restaurant companies across four market tiers — fast food, fast casual, casual dining, and upscale. Built with Google Sheets, SQLite, and Tableau to examine revenue, margins, same store sales, and location growth from 2000–2024 — revealing how each tier survived recession, disruption, and a global pandemic.
 
 ---
 
@@ -22,38 +18,28 @@ and a global pandemic.
 ## The Story
 
 ### Dashboard 1 — The Big Picture
-The industry crossed $1 trillion in annual revenue for the first time in 2024 — but
-the path there was anything but smooth. Two recessions, a pandemic, a frozen minimum
-wage, and relentless food price inflation all left their mark. This dashboard sets the
-macro stage before zooming into individual companies. The dual-axis CPI vs minimum wage
-chart is the sleeper hit — food prices rose 65% since 2009 while the federal minimum
-wage hasn't moved a dollar.
+The industry crossed $1 trillion in annual revenue for the first time in 2024 — but the path there was anything but smooth. Two recessions, a pandemic, a frozen minimum wage, and relentless food price inflation all left their mark. This dashboard sets the macro stage before zooming into individual companies. The dual-axis CPI vs minimum wage chart is the sleeper hit — food prices rose 65% since 2009 while the federal minimum wage hasn't moved a dollar.
 
 ![The Big Picture](images/dashboard1_big_picture.png)
 
 ---
 
 ### Dashboard 2 — Four Tiers, One Century
-Eight companies, four tiers, 25 years. The revenue line chart shows McDonald's
-dominating from above, Chipotle climbing from nothing, Panera going dark after 2016,
-and Yum!'s cliff drop marking the China spinoff. The scatter plot is the centerpiece —
-positioning every company by average margin vs margin volatility reveals Texas Roadhouse
-as the quiet outlier: consistently profitable in a way nobody else in the dataset
-comes close to matching.
+Eight companies, four tiers, 25 years. The revenue line chart shows McDonald's dominating from above, Chipotle climbing from nothing, Panera going dark after 2016, and Yum!'s cliff drop marking the China spinoff. The scatter plot is the centerpiece — positioning every company by average margin vs margin volatility reveals Texas Roadhouse as the quiet outlier: consistently profitable in a way nobody else in the dataset comes close to matching.
 
 ![Four Tiers, One Century](images/dashboard2_four_tiers.png)
 
 ---
 
 ### Dashboard 3 — Survive and Thrive
-This is where COVID hits the data. The grouped bar chart isolates four key years —
-2008, 2009, 2020, 2021 — showing each tier's same store sales response to crisis and
-recovery. Casual dining dropped -19.3% in 2020 then bounced back +22% in 2021. Fast
-casual grew during the pandemic. The heat map below tells the full 25-year margin story
-by company — with Ruth's Chris 2020 appearing as a vivid red square against an otherwise
-blue field. The sharpest single data point in the project.
+This is where COVID hits the data. The grouped bar chart isolates four key years — 2008, 2009, 2020, 2021 — showing each tier's same store sales response to crisis and recovery. Casual dining dropped -19.3% in 2020 then bounced back +22% in 2021. Fast casual grew during the pandemic. The heat map below tells the full 25-year margin story by company — with Ruth's Chris 2020 appearing as a vivid red square against an otherwise blue field. The sharpest single data point in the project.
 
 ![Survive and Thrive](images/dashboard3_survive_thrive.png)
+
+---
+
+## 📊 Live Dashboard
+**[View on Tableau Public](https://public.tableau.com/app/profile/bryce.gardner/vizzes)**
 
 ---
 
@@ -97,18 +83,21 @@ restaurant-industry-analysis/
 | GDP Growth | Federal Reserve Economic Data (FRED) | 2000–2024 |
 | Industry Revenue | National Restaurant Association | 2000–2024 |
 
-> **Note on methodology:** Same store sales for Yum! reflects Taco Bell flagship only;
-> Brinker reflects Chili's only; Darden reflects Olive Garden only. Labor cost data
-> only available for operator-owned companies — franchise models do not carry food or
-> labor costs on their books directly. Panera data ends 2016 (went private). Ruth's
-> Chris data ends 2022 (acquired by Dine Brands). Yum! 2016 revenue drop reflects
-> China spinoff, not operational decline. Darden 2014 revenue drop reflects Red Lobster
-> divestiture.
+> **Note on methodology:** Same store sales for Yum! reflects Taco Bell flagship only; Brinker reflects Chili's only; Darden reflects Olive Garden only. Labor cost data only available for operator-owned companies — franchise models do not carry food or labor costs on their books directly. Panera data ends 2016 (went private). Ruth's Chris data ends 2022 (acquired by Dine Brands). Yum! 2016 revenue drop reflects China spinoff, not operational decline. Darden 2014 revenue drop reflects Red Lobster divestiture.
 
 ---
 
-## Interactive Dashboards
-👉 **[View on Tableau Public](https://public.tableau.com/app/profile/bryce.gardner/vizzes)**
+## How to Run
+
+### Step 1 — SQL Queries
+1. Open **DB Browser for SQLite**
+2. File → Open Database → select the project database
+3. Click the **Execute SQL** tab
+4. Open `sql/restaurant_analysis_queries.sql` and run any query
+
+### Step 2 — Tableau Dashboards
+View live on Tableau Public:
+**[Four Tiers, One Century](https://public.tableau.com/app/profile/bryce.gardner/vizzes)**
 
 ---
 
@@ -150,5 +139,5 @@ Bryce Gardner
 | [Project 1 — Video Game Sales Analysis](https://github.com/brycegardner90/video-game-sales-analysis) | Global video game sales trends (1980–2020) | SQL · Power BI |
 | [Project 2 — NFL Penalty Bias Analysis](https://github.com/brycegardner90/nfl-penalty-analysis) | Do certain NFL teams get more blown calls? | Python · SQL · Power BI |
 | [Project 3 — Atlanta Rising](https://github.com/brycegardner90/Atlanta-Rising-A-Century-of-Growth) | Atlanta's century of economic & demographic growth | Python · SQLite · Power BI |
-| **Project 4 — Four Tiers, One Century** *(you are here)* | U.S. restaurant industry financial analysis 2000–2024 | Google Sheets · SQLite · Tableau |
-| Project 5 — Coming Soon | Financial Analysis Capstone | TBD |
+| **Project 4 — Restaurant Industry Analysis** *(you are here)* | U.S. restaurant industry financial analysis 2000–2024 | Google Sheets · SQLite · Tableau |
+| [Project 5 — The Forsyth Boom](https://github.com/brycegardner90/Forsyth-Boom) | Forsyth County small business & growth analysis | Python · SQLite · Tableau |
