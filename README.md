@@ -39,7 +39,7 @@ This is where COVID hits the data. The grouped bar chart isolates four key years
 ---
 
 ## 📊 Live Dashboard
-**[View on Tableau Public](https://public.tableau.com/app/profile/bryce.gardner/vizzes)**
+**[View on Tableau Public](https://public.tableau.com/app/profile/bryce.gardner/viz/RestaurantAnalysis_17800577680290/Story1)**
 
 ---
 
@@ -97,7 +97,7 @@ restaurant-industry-analysis/
 
 ### Step 2 — Tableau Dashboards
 View live on Tableau Public:
-**[Four Tiers, One Century](https://public.tableau.com/app/profile/bryce.gardner/vizzes)**
+**[Four Tiers, One Century](https://public.tableau.com/app/profile/bryce.gardner/viz/RestaurantAnalysis_17800577680290/Story1)**
 
 ---
 
